@@ -91,7 +91,12 @@
         <!-- Admin View -->
         <div id="admin-view" class="view">
           <h2>Enter Results</h2>
-          <p class="admin-note">Select actual game winners as they happen.</p>
+          <div id="espn-sync-controls" class="sync-controls">
+            <button id="sync-now-btn" class="btn-sync">Sync ESPN Results</button>
+            <label class="auto-sync-label"><input type="checkbox" id="auto-sync-toggle"> Auto-sync every 3 min</label>
+            <span id="sync-status" class="sync-status"></span>
+          </div>
+          <p class="admin-note">Results sync automatically from ESPN, or enter manually below.</p>
           <div class="region-tabs" id="admin-region-tabs">
             <button class="region-tab active" data-region="east">East</button>
             <button class="region-tab" data-region="west">West</button>
@@ -113,6 +118,7 @@
   <script src="bracket-data.js"></script>
   <script src="bracket-ui.js"></script>
   <script src="leaderboard.js"></script>
+  <script src="espn-sync.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

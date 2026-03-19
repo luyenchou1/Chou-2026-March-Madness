@@ -281,6 +281,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ESPN Sync controls
+  const syncBtn = document.getElementById("sync-now-btn");
+  if (syncBtn) {
+    syncBtn.addEventListener("click", async () => {
+      syncBtn.disabled = true;
+      syncBtn.textContent = "Syncing...";
+      try {
+        await syncESPNResults();
+      } catch (e) {
+        console.error("Sync failed:", e);
+      }
+      syncBtn.disabled = false;
+      syncBtn.textContent = "Sync ESPN Results";
+    });
+  }
+
+  const autoSyncToggle = document.getElementById("auto-sync-toggle");
+  if (autoSyncToggle) {
+    const savedAutoSync = localStorage.getItem("mm-auto-sync") === "true";
+    autoSyncToggle.checked = savedAutoSync;
+    if (savedAutoSync) startAutoSync();
+
+    autoSyncToggle.addEventListener("change", () => {
+      if (autoSyncToggle.checked) {
+        startAutoSync();
+        localStorage.setItem("mm-auto-sync", "true");
+      } else {
+        stopAutoSync();
+        localStorage.setItem("mm-auto-sync", "false");
+      }
+    });
+  }
+
   // Hash routing
   window.addEventListener("hashchange", () => {
     const hash = window.location.hash.slice(1);

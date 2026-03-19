@@ -481,6 +481,58 @@ main {
   color: white;
 }
 
+/* ESPN Sync Controls */
+.sync-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-sync {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 2px solid var(--secondary);
+  border-radius: var(--radius);
+  background: var(--secondary);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-sync:hover {
+  background: var(--secondary-light);
+  border-color: var(--secondary-light);
+}
+
+.btn-sync:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.auto-sync-label {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.sync-status {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.sync-status.sync-ok {
+  color: var(--correct);
+}
+
+.sync-status.sync-warn {
+  color: #f57c00;
+}
+
 /* Admin */
 .admin-note {
   font-size: 0.9rem;
@@ -601,6 +653,11 @@ main {
 [data-theme="dark"] .leaderboard-card {
   background: #1e1e1e;
   border-color: #333;
+}
+
+[data-theme="dark"] .btn-sync {
+  background: var(--secondary);
+  border-color: var(--secondary);
 }
 
 [data-theme="dark"] .admin-game {
