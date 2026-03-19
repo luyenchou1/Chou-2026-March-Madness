@@ -7,11 +7,11 @@
 // 5. Enable Realtime Database (start in test mode for now)
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT-default-rtdb.firebaseio.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDnzHjxeBaYZKVK-x6WtC_82XE78RfX_VI",
+  authDomain: "chou-march-madness.firebaseapp.com",
+  databaseURL: "https://chou-march-madness-default-rtdb.firebaseio.com",
+  projectId: "chou-march-madness",
+  storageBucket: "chou-march-madness.firebasestorage.app",
+  messagingSenderId: "1060924422092",
+  appId: "1:1060924422092:web:c70b39d3ce8e53d93a8f69"
 };
