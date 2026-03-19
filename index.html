@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chou Family March Madness 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen active">
+      <div class="login-container">
+        <h1>&#127936; March Madness 2026</h1>
+        <h2>Chou Family Bracket Challenge</h2>
+        <p>Who are you?</p>
+        <div class="family-buttons">
+          <button class="family-btn" data-name="Alaina">Alaina</button>
+          <button class="family-btn" data-name="Beili">Beili</button>
+          <button class="family-btn" data-name="Mama">Mama</button>
+          <button class="family-btn" data-name="Da">Da</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="main-screen" class="screen">
+      <header>
+        <div class="header-left">
+          <h1>&#127936; Chou Madness '26</h1>
+        </div>
+        <div class="header-right">
+          <span id="user-name"></span>
+          <button id="theme-toggle" class="btn-small" title="Toggle dark mode">&#9790;</button>
+          <button id="logout-btn" class="btn-small">Switch</button>
+        </div>
+      </header>
+      <nav>
+        <a href="#bracket" class="nav-link active" data-view="bracket">My Bracket</a>
+        <a href="#leaderboard" class="nav-link" data-view="leaderboard">Leaderboard</a>
+        <a href="#view" class="nav-link" data-view="view">View Brackets</a>
+        <a href="#admin" class="nav-link" data-view="admin" id="admin-link">Admin</a>
+      </nav>
+
+      <main>
+        <!-- Bracket View -->
+        <div id="bracket-view" class="view active">
+          <div class="bracket-header">
+            <h2>Fill Out Your Bracket</h2>
+            <div class="region-tabs">
+              <button class="region-tab active" data-region="east">East</button>
+              <button class="region-tab" data-region="west">West</button>
+              <button class="region-tab" data-region="midwest">Midwest</button>
+              <button class="region-tab" data-region="south">South</button>
+              <button class="region-tab" data-region="finalfour">Final Four</button>
+            </div>
+          </div>
+          <div id="bracket-container"></div>
+          <div class="bracket-progress">
+            <span id="picks-count">0</span> / 63 picks made
+          </div>
+        </div>
+
+        <!-- Leaderboard View -->
+        <div id="leaderboard-view" class="view">
+          <h2>Family Standings</h2>
+          <div id="leaderboard-container"></div>
+        </div>
+
+        <!-- View Others' Brackets -->
+        <div id="view-view" class="view">
+          <h2>View Brackets</h2>
+          <div class="view-selector">
+            <button class="view-member-btn" data-name="Alaina">Alaina</button>
+            <button class="view-member-btn" data-name="Beili">Beili</button>
+            <button class="view-member-btn" data-name="Mama">Mama</button>
+            <button class="view-member-btn" data-name="Da">Da</button>
+          </div>
+          <div class="region-tabs" id="view-region-tabs">
+            <button class="region-tab active" data-region="east">East</button>
+            <button class="region-tab" data-region="west">West</button>
+            <button class="region-tab" data-region="midwest">Midwest</button>
+            <button class="region-tab" data-region="south">South</button>
+            <button class="region-tab" data-region="finalfour">Final Four</button>
+          </div>
+          <div id="view-bracket-container"></div>
+        </div>
+
+        <!-- Admin View -->
+        <div id="admin-view" class="view">
+          <h2>Enter Results</h2>
+          <p class="admin-note">Select actual game winners as they happen.</p>
+          <div class="region-tabs" id="admin-region-tabs">
+            <button class="region-tab active" data-region="east">East</button>
+            <button class="region-tab" data-region="west">West</button>
+            <button class="region-tab" data-region="midwest">Midwest</button>
+            <button class="region-tab" data-region="south">South</button>
+            <button class="region-tab" data-region="finalfour">Final Four</button>
+          </div>
+          <div id="admin-container"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="bracket-data.js"></script>
+  <script src="bracket-ui.js"></script>
+  <script src="leaderboard.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
