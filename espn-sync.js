@@ -81,9 +81,9 @@ function parseESPNNote(notes) {
   const headline = (notes[0].headline || "").toLowerCase();
 
   let region = null;
-  if (headline.includes("east")) region = "east";
+  if (headline.includes("midwest")) region = "midwest";
+  else if (headline.includes("east")) region = "east";
   else if (headline.includes("west")) region = "west";
-  else if (headline.includes("midwest")) region = "midwest";
   else if (headline.includes("south")) region = "south";
 
   let roundPrefix = null;
