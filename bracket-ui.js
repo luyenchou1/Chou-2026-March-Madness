@@ -200,6 +200,8 @@ function createTeamRow(team, gameId, slot, picked, actualWinner, editable, picks
 }
 
 function makePick(gameId, teamName, picks, results) {
+  // Picks are locked — tournament has started
+  return;
   if (!window.currentUser) return;
 
   // If this pick is the same as current, do nothing
