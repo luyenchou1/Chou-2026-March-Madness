@@ -190,7 +190,7 @@ function renderCurrentBracket() {
   currentPicks = loadPicks(currentUser);
   window.currentPicks = currentPicks;
   currentResults = loadResults();
-  renderBracket(container, currentRegion, currentPicks, currentResults, true);
+  renderBracket(container, currentRegion, currentPicks, currentResults, false);
   updatePicksCount();
 }
 
